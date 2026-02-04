@@ -24,8 +24,13 @@ jobs:
 
       - name: Build Project
         run: |
+          if [ -f pyproject.toml ] || [ -f setup.py ]; then
+            python -m pip install --upgrade pip
             pip install build
             python -m build
+          else
+            echo "No pyproject.toml or setup.py found; skipping build"
+          fi
 
       - name: Deploy Project
         run: |

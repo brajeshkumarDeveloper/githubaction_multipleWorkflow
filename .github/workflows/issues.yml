@@ -1,0 +1,9 @@
+name: Hanold Issue Workflow
+on: issues
+jobs:
+  issue_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Issue Triggered
+        run: |
+          echo "${{toJson(github.event)}}"

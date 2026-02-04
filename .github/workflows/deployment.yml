@@ -15,10 +15,7 @@ jobs:
           pip install flake8
           flake8 .
       - name: Test Code
-        run: |
-          pip install pytest
-           pip install -r requirements.txt
-        name: Run pytest
+      - name: Run pytest
         run: |
           export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest

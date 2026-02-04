@@ -1,4 +1,4 @@
-name: Hanold Issue Workflow
+name: Handle Issue Workflow
 on: issues
 jobs:
   issue_job:

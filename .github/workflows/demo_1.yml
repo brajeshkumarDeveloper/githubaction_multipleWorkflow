@@ -1,9 +1,18 @@
-name: Deployment Workflow_Events
-on: 
-   pull_request:
-     types: [opened,  reopened]
-   workflow_dispatch:
+on:
+  push:
+    branches:
+      - main
+      - dev-*
+      - 'feature/*'
+    paths-ignore:
+      - '.github/workflows/*'
 
+  pull_request:
+    types:
+      - opened
+      - reopened
+    paths-ignore:
+      - '.github/workflows/*'
 
 jobs:
   deploy:
